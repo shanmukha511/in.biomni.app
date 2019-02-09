@@ -26,7 +26,18 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
-
+<distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>aolshared1a-releases</name>
+        <url>https://shanmukha520.jfrog.io/shanmukha520/Biomni</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>aolshared1a-snapshots</name>
+        <url>https://shanmukha520.jfrog.io/shanmukha520/Biomni</url>
+    </snapshotRepository>
+</distributionManagement>
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
