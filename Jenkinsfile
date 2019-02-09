@@ -13,8 +13,11 @@ stages
 {
 stage("build")
 {
+ steps{
+  
  sh "mvn clean install"
  sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/Sample_Slave_job/target/biomni-1.0-SNAPSHOT.jar root@${params.servername}:/tmp"
+}
 }
 
 }
