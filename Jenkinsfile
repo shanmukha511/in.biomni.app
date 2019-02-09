@@ -35,14 +35,15 @@ post
 {
     success
     {
-	    sh "echo ${params.servername}"
-	sh "scp /tmp/workspace/Sample_Slave_job/biomni-1.0-SNAPSHOT.jar root@${params.servername}."
+	
 	
     }
 }
 steps
 {
 sh "uptime"
+    sh "echo ${params.servername}"
+	sh "scp /tmp/workspace/Sample_Slave_job/biomni-1.0-SNAPSHOT.jar root@${params.servername}."
 }
 }
 stage("test")
