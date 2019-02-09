@@ -5,6 +5,11 @@ agent
 label "Linux"
 
 }
+parameters
+	{
+		choice(name: 'Environment',choices: 'DEV\nUAT\nPRD',Description: 'Which Environment the Artifact should be Deployed')
+		string(ServerName: 'Name',Description: "Please enter HostName') 
+	} 	
 environment
 {
     a="hi"
