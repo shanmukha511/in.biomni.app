@@ -8,7 +8,7 @@ label "Linux"
 parameters
 	{
 		choice(name: 'Environment',choices: 'DEV\nUAT\nPRD',description: 'Which Environment the Artifact should be Deployed')
-		string(ServerName: 'servername',description: 'Please enter HostName') 
+		string(name: 'servername',description: 'Please enter HostName') 
 	} 	
 environment
 {
