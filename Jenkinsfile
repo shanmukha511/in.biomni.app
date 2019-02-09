@@ -1,29 +1,30 @@
 pipeline
 {
-agent
+agent 
 {
 label "Linux"
-
 }
 parameters
-	{
-		choice(name: 'Environment',choices: 'DEV\nUAT\nPRD',description: 'Which Environment the Artifact should be Deployed')
-		string(name: 'servername',description: 'Please enter HostName') 
-	} 	
-
-
+{
+ choice(name: 'Environment',choices: 'Dev\nUAT\nPRD',description: 'Please select Environment')
+ string(name:  'servername',description: 'Please enter ip address of Machine where you want to deploy artifact')
+}
 stages
 {
 stage("build")
 {
-
-steps
+ sh 'mvn clean install'
+ sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/Sample_Slave_job/target/biomni-1.0-SNAPSHOT.jar root@${params.servername}:/tmp"
+}
+post
 {
-sh "uptime"
-    sh "echo ${params.servername}"
-	sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/Sample_Slave_job/target/biomni-1.0-SNAPSHOT.jar root@${params.servername}:/tmp"
+success
+{
+ echo "Artifact Deployed successfully"
 }
+failure
+{
+echo "Artifact Not Deployed "
 }
-
 }
 }
