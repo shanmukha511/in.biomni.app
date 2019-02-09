@@ -17,7 +17,7 @@ stage("build")
  steps{
   
  sh "mvn clean install"
-  sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/${params.Jobname}/target/biomni-1.0-SNAPSHOT.jar root@${params.servername}:/tmp"
+  sh "scp -v -o StrictHostKeyChecking=no /tmp/workspace/pipeline/target/biomni-1.0-SNAPSHOT.jar root@${params.servername}:/tmp"
 }
 }
 
