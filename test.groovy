@@ -1,8 +1,8 @@
-pipelineJob('example') {
+pipelineJob('Pipeline') {
     definition {
         cpsScm {
             scm {
-                git('https://github.com/jenkinsci/job-dsl-plugin.git')
+                git('https://github.com/shanmukha511/in.biomni.app.git')
             }
         }
     }
