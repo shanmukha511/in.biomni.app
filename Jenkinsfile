@@ -29,15 +29,23 @@ stage("build")
   {
  def output = sh returnStdout: true, script: 'curl -Is http://54.169.186.211:8888/AbcabWebApp/ | head -n 1 | cut -c 10-12'
    println "${output}"
+   //if ($output == 200) {
+     //           echo 'I only execute on the master branch'
+       //     } else {
+         //       echo 'I execute elsewhere'
+           // }  
+ }
+  
+ }
+
+}
+
+}
+ 
    if ($output == 200) {
                 echo 'I only execute on the master branch'
             } else {
-                echo 'I execute elsewhere'
-            }  
- }
- }
-
-}
-
-}
+              echo 'I execute elsewhere'
+           } 
+ 
 }
