@@ -25,11 +25,7 @@ stage("build")
   //sh "curl -ls ${params.servername}:8888/biomni | head -n 1 | cut -c 10-12" > $a
   //sh "echo $a"
   
-  GIT_COMMIT_EMAIL = sh (
-    script: 'uname',
-    returnStdout: true).trim()
-  
-  echo "Git committer email: ${GIT_COMMIT_EMAIL}"
+ def output = sh returnStdout: true, script: 'ls -l'
  }
 
 }
