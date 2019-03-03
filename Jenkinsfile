@@ -9,7 +9,8 @@ parameters
  choice(name: 'Environment',choices: 'Dev\nUAT\nPRD',description: 'Please select Environment')
  string(name:  'servername',description: 'Please enter ip address of Machine where you want to deploy artifact')
  string(name:  'Jobname',description: 'Please Jobname to get ocation of artifact')
-  string(name: 'ContainerId',description: 'Please Enter Container ID:')
+ string(name: 'ContainerId',description: 'Please Enter Container ID:')
+ string(name:  'servername1',description: 'Please enter ip address of Machine where you want to deploy artifact')
 }
 stages
 {
@@ -28,6 +29,11 @@ stage("build")
   {
  def output = sh returnStdout: true, script: 'curl -Is http://54.169.186.211:8888/AbcabWebApp/ | head -n 1 | cut -c 10-12'
    println "${output}"
+   if ( output == 200) {
+                echo 'I only execute on the master branch'
+            } else {
+                echo 'I execute elsewhere'
+            }  
  }
  }
 
