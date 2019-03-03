@@ -27,7 +27,7 @@ stage("build")
   script
   {
  def output = sh returnStdout: true, script: 'ls -l'
-   echo ${output}
+   println "${output}"
  }
  }
 
