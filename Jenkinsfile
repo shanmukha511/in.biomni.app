@@ -11,6 +11,7 @@ parameters
  string(name:  'Jobname',description: 'Please Jobname to get ocation of artifact')
  string(name: 'ContainerId',description: 'Please Enter Container ID:')
  string(name:  'servername1',description: 'Please enter ip address of Machine where you want to deploy artifact')
+ string(name:  'servername2',description: 'Please enter ip address of Machine where you want to deploy artifact')
 }
 stages
 {
