@@ -24,8 +24,10 @@ stage("build")
   //println ret
   //sh "curl -ls ${params.servername}:8888/biomni | head -n 1 | cut -c 10-12" > $a
   //sh "echo $a"
-  
+  script
+  {
  def output = sh returnStdout: true, script: 'ls -l'
+ }
  }
 
 }
