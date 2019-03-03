@@ -26,7 +26,7 @@ stage("build")
   //sh "echo $a"
   script
   {
- def output = sh returnStdout: true, script: 'ls -l'
+ def output = sh returnStdout: true, script: 'curl -ls http://54.169.186.211:8888/AbcabWebApp | head -n 1 | cut -c 10-12'
    println "${output}"
  }
  }
