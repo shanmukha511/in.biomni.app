@@ -72,4 +72,17 @@
       </plugins>
     </pluginManagement>
   </build>
+ <distributionManagement>
+    <repository>
+        <id>central</id>
+        <name>aolshared2a-releases</name>
+        <url>https://binaryartifactory.jfrog.io/binaryartifactory/Biomni</url>
+    </repository>
+    <snapshotRepository>
+        <id>snapshots</id>
+        <name>aolshared2a-snapshots</name>
+        <url>https://binaryartifactory.jfrog.io/binaryartifactory/Biomni</url>
+    </snapshotRepository>
+</distributionManagement>
+
 </project>
