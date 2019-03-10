@@ -17,6 +17,10 @@ stages
 {
 stage("build")
 {
+ when { 
+             { 
+                branch 'feature' 
+            }
  steps{
 
  sh "mvn deploy"
