@@ -44,7 +44,7 @@ stage("Docker")
    sh "docker login --username shanmukha511 --password  raviteja511"
    sh "docker tag tomcat:tomcat shanmukha511/dockerimages"
    sh "docker push shanmukha511/dockerimages"
-   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.41.213"
+   sh "ssh -tt -v -o StrictHostKeyChecking=no root@52.15.131.212"
    sh "docker pull shanmukha511/dockerimages"
    sh "docker run -it -d --name tomcat -p 8080:8888 tomcat:tomcat /bin/bash"
    sh "docker ps"
