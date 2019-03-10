@@ -37,7 +37,7 @@ stage("Docker")
   steps
   {
    sh "docker info"
-   sh "docker build -t "test:test1" .
+   sh "docker build -t test:test1 ."
    sh "docker images"
   }
  }
