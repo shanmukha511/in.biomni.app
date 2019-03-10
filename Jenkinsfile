@@ -43,6 +43,8 @@ stage("Docker")
    sh "docker login --username shanmukha511 --password  raviteja511"
    sh "docker tag tomcat:tomcat shanmukha511/dockerimages"
    sh "docker push shanmukha511/dockerimages"
+   sh "docker run -it -d --name tomcat -p 8080:8888 tomcat:tomcat /bin/bash"
+   sh "docker ps"
   }
  }
 
