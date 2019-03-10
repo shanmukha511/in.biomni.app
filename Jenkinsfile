@@ -39,14 +39,14 @@ stage("Docker")
   steps
   {
    sh "docker info"
-   sh "docker build -t tomcat:tomcat ."
+   sh "docker build -t tomcat:tomcat2 ."
    sh "docker images"
    sh "docker login --username shanmukha511 --password  raviteja511"
-   sh "docker tag tomcat:tomcat shanmukha511/dockerimages"
-   sh "docker push shanmukha511/dockerimages"
+   sh "docker tag tomcat:tomcat2 shanmukha511/tomcat:tomcat2"
+   sh "docker push shanmukha511/tomcat:tomcat2"
    sh "ssh -tt -v -o StrictHostKeyChecking=no root@52.15.131.212"
-   sh "docker pull shanmukha511/dockerimages"
-   sh "docker run -it -d --name tomcat -p 8080:8888 tomcat:tomcat /bin/bash"
+   sh "docker pull shanmukha511/tomcat:tomcat2"
+   sh "docker run -it -d --name tomcat -p 8080:8888 tomcat:tomcat2 /bin/bash"
    sh "docker ps"
   }
  }
