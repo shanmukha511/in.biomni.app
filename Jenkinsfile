@@ -44,9 +44,9 @@ stage("Docker")
    sh "docker login --username shanmukha511 --password  raviteja511"
    sh "docker tag tomcat:tomcat2 shanmukha511/tomcat:tomcat2"
    sh "docker push shanmukha511/tomcat:tomcat2"
-   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.20.166 'docker pull shanmukha511/tomcat:tomcat2'"
-   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.20.166 'docker run -it -d --name tomcat -p 8080:8888 tomcat:tomcat2 /bin/bas'"
-   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.20.166 'docker ps'"
+   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.41.213 'docker pull shanmukha511/tomcat:tomcat2'"
+   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.41.213 'docker run -it -d --name tomcat -p 8080:8888 tomcat:tomcat2 /bin/bas'"
+   sh "ssh -tt -v -o StrictHostKeyChecking=no root@172.31.41.213 'docker ps'"
 
   }
  }
