@@ -7,7 +7,7 @@ RUN mkdir /shanmukha
 RUN apt-get -y update && apt-get -y upgrade
 RUN apt-get -y install openjdk-8-jdk wget
 RUN apt-get -y install curl
-COPY test.txt /shanmukha
+#COPY test.txt /shanmukha
 COPY /build/workspace/pipeline/target/*.jar /usr/local/tomcat/webapps
 WORKDIR /usr/local/tomcat
 EXPOSE 8080
