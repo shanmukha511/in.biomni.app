@@ -41,7 +41,7 @@ stage("Docker")
    sh "docker build -t Tomcat:latest ."
    sh "docker images"
    sh "docker login --username shanmukha511 --password  raviteja511"
-   sh "docker tag Tomcat:latest shanmukha511/dockerimages"
+   sh "docker tag tomcat:latest shanmukha511/dockerimages"
    sh "docker push shanmukha511/dockerimages"
   }
  }
