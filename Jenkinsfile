@@ -10,6 +10,7 @@ parameters
 {
  choice(name: 'Environment',choices: 'Dev\nUAT\nPRD',description: 'Please select Environment')
  string(name:  'servername',description: 'Please enter ip address of Machine where you want to deploy artifact')
+ string(name:  'servername1',description: 'Please enter ip address of Machine where you want to deploy artifact')
 
 }
  
